@@ -1,10 +1,10 @@
 # DEM co-registration
 
-This repository contains the MATLAB codes of two DEM co-registration algortihms described by [Nuth and Kääb (2011)](https://www.the-cryosphere.net/5/271/2011/tc-5-271-2011.html) and [Rosenholm and Torlegard (1988)](https://www.asprs.org/wp-content/uploads/pers/1988journal/oct/1988_oct_1385-1389.pdf).
+This repository contains the MATLAB codes of two DEM co-registration algorithms described by [Nuth and Kääb (2011)](https://www.the-cryosphere.net/5/271/2011/tc-5-271-2011.html) and [Rosenholm and Torlegard (1988)](https://www.asprs.org/wp-content/uploads/pers/1988journal/oct/1988_oct_1385-1389.pdf).
 
 ## Installation
 
-Replace the built-in MapRasterReference.m in the "C:\Program Files\Polyspace\*MatlabVersion*\toolbox\map\map\+map\+rasterref\" directory by a revised file.
+Replace the built-in MapRasterReference.m in the "C:\Program Files\Polyspace\*MatlabVersion*\toolbox\map\map\+map\+rasterref\" directory with a revised file.
 
 ## Data
 
