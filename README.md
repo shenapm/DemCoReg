@@ -4,7 +4,7 @@ This repository contains the MATLAB codes of two DEM co-registration algorithms 
 
 ## Installation
 
-Replace the built-in MapRasterReference.m in the "C:\Program Files\Polyspace\*MatlabVersion*\toolbox\map\map\+map\+rasterref\" directory with a revised file.
+Replace the built-in MapRasterReference.m in the "...\YourMatlabVersion\toolbox\map\map\+map\+rasterref\" directory with a revised file.
 
 ## Data
 
