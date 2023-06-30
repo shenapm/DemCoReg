@@ -28,6 +28,7 @@ for i=1:length(cPathDemS)
     rAngA = funImgRead(sPathAngA,-9000,9000);
     rDemM(isnan(rAngS+rAngA)) = nan;
     
+    [rGradX, rGradY] =  funDemGrad(rDemM, RefDemM);
     %% Pre-processing
     [ixM,iyM] = meshgrid(1:size(rDemM,2), 1:size(rDemM,1));
     [rXM,rYM] = intrinsicToWorld(RefDemM,ixM,iyM);
@@ -133,14 +134,23 @@ for i=1:length(cPathDemS)
             mdh = median(dh);
             mts = median(tand(slope));
             
+            gradX = rGradX(bTrV);
+            gradY = rGradY(bTrV);
+            
             % Image-centered coordinates
             Xc = rXMc(bTrV);
             Yc = rYMc(bTrV);
             Zc = rZMc(bTrV);
             
             % Regression coefficients
-            vX = sind(aspect).*ts;
-            vY = cosd(aspect).*ts;
+            if iAlgo <= 4
+                vX = sind(aspect).*ts;
+                vY = cosd(aspect).*ts;
+            else
+                vX = -gradX;
+                vY = -gradY;
+            end
+            
             vG = vX.*Xc + vY.*Yc + Zc;  %Gamma
             vO = Yc-vY.*Zc;             %Omega
             vP = vX.*Zc-Xc;             %Phi
